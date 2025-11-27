@@ -13,6 +13,8 @@ import {
 import { LogoGraphic } from '@/components/icons/logo-graphic';
 import { FacebookIcon } from '@/components/icons/facebook-icon';
 import { LinkedinIcon } from '@/components/icons/linkedin-icon';
+import { AGHLogo } from '@/components/icons/agh-logo';
+import { IETLogo } from '@/components/icons/iet-logo';
 
 const contactDetails = [
   {
@@ -256,7 +258,7 @@ export default function Home() {
 
       <footer className="bg-card border-t">
         <div className="container mx-auto px-4 py-8 md:px-6">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 items-center">
             <div className="flex flex-col gap-4 items-start">
               <div className="flex items-center gap-3">
                 <div className="bg-white rounded-full p-2 shadow-md">
@@ -269,6 +271,15 @@ export default function Home() {
                 <br />
                 Akademia Górniczo-Hutnicza w Krakowie
               </p>
+            </div>
+
+            <div className="flex justify-center gap-8">
+              <Link href="https://www.agh.edu.pl/" target="_blank" rel="noopener noreferrer">
+                <AGHLogo className="h-24" />
+              </Link>
+              <Link href="https://www.iet.agh.edu.pl/" target="_blank" rel="noopener noreferrer">
+                <IETLogo className="h-24" />
+              </Link>
             </div>
 
             <div className="flex flex-col gap-4 md:items-end">
