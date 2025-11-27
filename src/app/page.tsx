@@ -13,6 +13,7 @@ import {
 import { LogoGraphic } from '@/components/icons/logo-graphic';
 import { FacebookIcon } from '@/components/icons/facebook-icon';
 import { LinkedinIcon } from '@/components/icons/linkedin-icon';
+import { AghLogo } from '@/components/icons/agh-logo';
 
 const contactDetails = [
   {
@@ -272,7 +273,9 @@ export default function Home() {
             </div>
 
             <div className="flex justify-center gap-8">
-              {/* Placeholder for logos */}
+              <Link href="https://www.agh.edu.pl/" target="_blank">
+                <AghLogo className="h-24 w-auto" />
+              </Link>
             </div>
 
             <div className="flex flex-col gap-4 md:items-end">
