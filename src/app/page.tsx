@@ -34,7 +34,6 @@ const contactDetails = [
 ];
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
   const projectImage = PlaceHolderImages.find((img) => img.id === 'project-1');
   const teamImages = PlaceHolderImages.filter((img) =>
     img.id.startsWith('member-')
@@ -43,12 +42,12 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh bg-background text-foreground">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center">
-          <Link href="/" className="mr-6 flex items-center space-x-3">
-            <LogoGraphic className="h-8 w-8" />
-            <span className="font-bold text-xl">C1PH3R</span>
+        <div className="container flex h-20 items-center">
+          <Link href="/" className="mr-6 flex items-center space-x-4">
+            <LogoGraphic className="h-10 w-10" />
+            <span className="font-bold text-2xl">C1PH3R</span>
           </Link>
-          <nav className="flex items-center space-x-6 text-base font-medium">
+          <nav className="flex items-center space-x-8 text-lg font-medium">
             <Link href="#o-nas">O nas</Link>
             <Link href="#projekty">Projekty</Link>
             <Link href="#zespol">Zespół</Link>
@@ -59,21 +58,14 @@ export default function Home() {
       <main className="flex-grow">
         <section
           id="hero"
-          className="relative flex h-[60dvh] min-h-[400px] w-full items-center justify-center text-center"
+          className="relative flex h-[60dvh] min-h-[400px] w-full items-center justify-center text-center bg-background"
         >
-          {heroImage && (
-            <Image
-              src={heroImage.imageUrl}
-              alt={heroImage.description}
-              fill
-              className="object-cover"
-              priority
-              data-ai-hint={heroImage.imageHint}
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-background" />
+          <div className="absolute inset-0 flex items-center justify-center opacity-10">
+            <LogoGraphic className="w-1/2 h-1/2 text-foreground" />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
           <div className="relative z-10 container px-4 md:px-6">
-            <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="font-headline text-4xl font-bold tracking-tighter text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               Koło Naukowe <span className="text-primary tracking-widest">C1PH3R</span>
             </h1>
             <p className="mx-auto mt-4 max-w-[700px] text-lg text-muted-foreground md:text-xl">
