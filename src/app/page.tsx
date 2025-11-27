@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh bg-background text-foreground">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-24 items-center justify-between">
+        <div className="container flex h-24 items-center">
           <div className="flex items-center">
             <Link href="/" className="mr-6 flex items-center space-x-4">
               <LogoGraphic className="h-20 w-20" />
@@ -58,14 +58,6 @@ export default function Home() {
               <Link href="#kontakt">Kontakt</Link>
             </nav>
           </div>
-          <Link
-            href="https://iet.agh.edu.pl/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:block"
-          >
-            <IETLogo className="h-16 w-16" />
-          </Link>
         </div>
       </header>
 
