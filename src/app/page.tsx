@@ -13,6 +13,7 @@ import {
 import { LogoGraphic } from '@/components/icons/logo-graphic';
 import { FacebookIcon } from '@/components/icons/facebook-icon';
 import { LinkedinIcon } from '@/components/icons/linkedin-icon';
+import { Header } from '@/components/layout/header';
 import { AGHLogo } from '@/components/icons/agh-logo';
 
 const goals = [
@@ -50,53 +51,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-dvh bg-background text-foreground">
-      <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-          <Link href="#" className="flex items-center gap-4" prefetch={false}>
-            <div className="bg-white rounded-full p-1">
-              <LogoGraphic className="h-12 w-12 text-primary" />
-            </div>
-            <span className="font-headline text-2xl font-bold tracking-wider">
-              C1PH3R
-            </span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <AGHLogo className="h-12 hidden sm:block" />
-            <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="text-muted-foreground hover:text-primary"
-              >
-                <Link
-                  href="#"
-                  aria-label="LinkedIn Profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LinkedinIcon className="h-6 w-6" />
-                </Link>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="text-muted-foreground hover:text-primary"
-              >
-                <Link
-                  href="#"
-                  aria-label="Facebook Profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FacebookIcon className="h-6 w-6" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main className="flex-grow">
         <section
