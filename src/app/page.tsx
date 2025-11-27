@@ -50,20 +50,22 @@ export default function Home() {
               C1PH3R
             </span>
           </Link>
-          <nav className="hidden md:flex items-center space-x-8 text-xl font-medium">
-            <Link href="#o-nas">O nas</Link>
-            <Link href="#projekty">Projekty</Link>
-            <Link href="#zespol">Zespół</Link>
-            <Link href="#kontakt">Kontakt</Link>
-          </nav>
-          <Link
-            href="https://iet.agh.edu.pl/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:block"
-          >
-            <IETLogo className="h-16 w-16" />
-          </Link>
+          <div className="flex items-center gap-8">
+            <nav className="hidden md:flex items-center space-x-8 text-xl font-medium">
+              <Link href="#o-nas">O nas</Link>
+              <Link href="#projekty">Projekty</Link>
+              <Link href="#zespol">Zespół</Link>
+              <Link href="#kontakt">Kontakt</Link>
+            </nav>
+            <Link
+              href="https://iet.agh.edu.pl/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:block"
+            >
+              <IETLogo className="h-16 w-16" />
+            </Link>
+          </div>
         </div>
       </header>
 
