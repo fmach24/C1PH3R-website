@@ -44,8 +44,8 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-24 items-center">
           <Link href="/" className="mr-6 flex items-center space-x-4">
-            <LogoGraphic className="h-16 w-16" />
-            <span className="font-headline font-bold text-4xl">C1PH3R</span>
+            <LogoGraphic className="h-20 w-20" />
+            <span className="font-headline font-bold text-5xl tracking-wider">C1PH3R</span>
           </Link>
           <nav className="flex items-center space-x-8 text-xl font-medium">
             <Link href="#o-nas">O nas</Link>
@@ -60,10 +60,10 @@ export default function Home() {
           id="hero"
           className="relative flex h-[60dvh] min-h-[400px] w-full items-center justify-center text-center bg-background"
         >
-          <div className="absolute inset-0 flex items-center justify-center opacity-10">
+          <div className="absolute inset-0 flex items-center justify-center opacity-10 p-8">
             <LogoGraphic className="w-full h-full text-foreground" />
           </div>
-          <div className="absolute inset-0 bg-background/70" />
+          {/* <div className="absolute inset-0 bg-background/70" /> */}
           <div className="relative z-10 container px-4 md:px-6">
             <h1 className="font-headline text-4xl font-bold tracking-tighter text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               Koło Naukowe <span className="text-primary tracking-widest">C1PH3R</span>
@@ -299,5 +299,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
