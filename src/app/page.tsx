@@ -44,10 +44,10 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-20 items-center">
           <Link href="/" className="mr-6 flex items-center space-x-4">
-            <LogoGraphic className="h-10 w-10" />
-            <span className="font-bold text-2xl">C1PH3R</span>
+            <LogoGraphic className="h-14 w-14" />
+            <span className="font-bold text-3xl">C1PH3R</span>
           </Link>
-          <nav className="flex items-center space-x-8 text-lg font-medium">
+          <nav className="flex items-center space-x-8 text-xl font-medium">
             <Link href="#o-nas">O nas</Link>
             <Link href="#projekty">Projekty</Link>
             <Link href="#zespol">Zespół</Link>
@@ -61,7 +61,7 @@ export default function Home() {
           className="relative flex h-[60dvh] min-h-[400px] w-full items-center justify-center text-center bg-background"
         >
           <div className="absolute inset-0 flex items-center justify-center opacity-10">
-            <LogoGraphic className="w-3/4 h-3/4 text-foreground" />
+            <LogoGraphic className="w-11/12 h-11/12 text-foreground" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
           <div className="relative z-10 container px-4 md:px-6">
