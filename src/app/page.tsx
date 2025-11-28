@@ -1,8 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Linkedin, Facebook } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
 import {
   Card,
   CardContent,
@@ -39,18 +42,35 @@ export default function Home() {
   const teamImages = PlaceHolderImages.filter((img) =>
     img.id.startsWith('member-')
   );
+  
+  const [logoScale, setLogoScale] = useState(0.5);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const maxScroll = 800; // maksymalne piksele do skalowania
+      const scale = 0.5 + (scrollY / maxScroll) * 2.5; // skaluje od 0.5 do 3x
+      setLogoScale(Math.min(scale, 3)); // maksymalna skala 3x
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="flex flex-col min-h-dvh bg-background text-foreground">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-24 items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="mr-6 flex items-center space-x-4">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="mr-6 flex items-center space-x-4 cursor-pointer bg-transparent border-none"
+            >
               <LogoGraphic className="h-20 w-20" />
               <span className="font-headline font-bold text-2xl tracking-wider">
                 C1PH3R
               </span>
-            </Link>
+            </button>
             <nav className="hidden md:flex items-center space-x-8 text-xl font-medium">
               <Link href="#o-nas">O nas</Link>
               <Link href="#projekty">Projekty</Link>
@@ -58,15 +78,38 @@ export default function Home() {
               <Link href="#kontakt">Kontakt</Link>
             </nav>
           </div>
+          <div className="flex items-center gap-3">
+            <Link
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center h-12 w-12 rounded-md bg-white border-2 border-primary/20 shadow-md text-primary hover:bg-gray-100 transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-7 w-7" strokeWidth={1.5} />
+            </Link>
+            <Link
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center h-12 w-12 rounded-md bg-white border-2 border-primary/20 shadow-md text-primary hover:bg-gray-100 transition-colors"
+              aria-label="Facebook"
+            >
+              <Facebook className="h-7 w-7" strokeWidth={1.5} />
+            </Link>
+          </div>
         </div>
       </header>
 
       <main className="flex-grow">
         <section
           id="hero"
-          className="relative flex h-[60dvh] min-h-[400px] w-full items-center justify-center text-center bg-background overflow-hidden"
+          className="relative flex h-screen w-full items-center justify-center text-center bg-background overflow-hidden"
         >
-          <div className="absolute inset-[-150%] flex items-center justify-center opacity-10">
+          <div 
+            className="absolute inset-[-150%] flex items-center justify-center opacity-10 transition-transform duration-300 ease-out"
+            style={{ transform: `scale(${logoScale})` }}
+          >
             <LogoGraphic className="w-full h-full text-foreground" />
           </div>
           <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
@@ -260,12 +303,15 @@ export default function Home() {
         <div className="container mx-auto px-4 py-8 md:px-6">
           <div className="grid md:grid-cols-3 gap-8 items-center">
             <div className="flex flex-col gap-4 items-start">
-              <div className="flex items-center gap-3">
+              <button 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="flex items-center gap-3 cursor-pointer bg-transparent border-none p-0"
+              >
                 <div className="bg-white rounded-full p-2 shadow-md">
                   <LogoGraphic className="h-12 w-12 text-primary" />
                 </div>
                 <span className="font-headline text-2xl font-bold">C1PH3R</span>
-              </div>
+              </button>
               <p className="text-sm text-muted-foreground">
                 Koło Naukowe Cyberbezpieczeństwa
                 <br />
@@ -275,7 +321,7 @@ export default function Home() {
 
             <div className="flex justify-center items-center gap-8">
               <Link href="https://www.agh.edu.pl/" target="_blank">
-                <AghLogo className="h-24 w-auto" />
+                <AghLogo width={96} height={96} className="h-24 w-auto object-contain" />
               </Link>
               <Link href="https://www.iet.agh.edu.pl/" target="_blank">
                 <WietLogo className="h-24 w-auto" />

@@ -1,15 +1,14 @@
-import type { SVGProps } from 'react';
+import Image, { ImageProps } from 'next/image';
+import aghLogoImage from './logos/agh-logo.jpg';
 
-export function AghLogo(props: SVGProps<SVGSVGElement>) {
+type AghLogoProps = Omit<ImageProps, 'src' | 'alt'>;
+
+export function AghLogo(props: AghLogoProps) {
   return (
-    <svg
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      width="471"
-      height="744"
+    <Image
+      src={aghLogoImage}
+      alt="AGH Logo"
       {...props}
-    >
-      <path/>
-    </svg>
+    />
   );
 }

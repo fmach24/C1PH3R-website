@@ -6,6 +6,12 @@ import { cn } from '@/lib/utils';
 export const metadata: Metadata = {
   title: 'C1PH3R Hub',
   description: 'Strona internetowa Koła Naukowego Cipher AGH',
+  icons: {
+    icon: [
+      { url: '/cipher_logo.ico' },
+      { url: '/favicon.ico' },
+    ],
+  },
 };
 
 export default function RootLayout({
