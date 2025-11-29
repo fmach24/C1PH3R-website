@@ -22,8 +22,8 @@ import { AghLogo } from '@/components/icons/agh-logo';
 const contactDetails = [
   {
     icon: Mail,
-    value: 'cipher@agh.edu.pl',
-    href: 'mailto:cipher@agh.edu.pl',
+    value: 'michalCippera@agh.edu.pl',
+    href: 'mailto:michalCippera@agh.edu.pl',
   },
   {
     icon: Phone,
@@ -32,8 +32,8 @@ const contactDetails = [
   },
   {
     icon: MapPin,
-    value: 'Wydział EAIiIB, AGH, Kraków',
-    href: '#',
+    value: 'Wydział WiET, AGH, Kraków',
+    href: 'https://maps.app.goo.gl/sfudVf5QGfyj6PcN6',
   },
 ];
 
@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh bg-background text-foreground">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-24 items-center justify-between">
+        <div className="container mx-auto px-4 md:px-6 flex h-24 items-center justify-between">
           <div className="flex items-center">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -106,14 +106,21 @@ export default function Home() {
           id="hero"
           className="relative flex h-screen w-full items-center justify-center text-center bg-background overflow-hidden"
         >
-          <div 
-            className="absolute inset-[-150%] flex items-center justify-center opacity-10 transition-transform duration-300 ease-out"
-            style={{ transform: `scale(${logoScale})` }}
+          <div
+            className="absolute opacity-10 transition-transform duration-300 ease-out"
+            style={{
+              left: '50%',
+              top: '50%',
+              width: '200vmax',
+              height: '200vmax',
+              transform: `translate(-50%,-50%) scale(${logoScale})`,
+              transformOrigin: 'center center',
+            }}
           >
             <LogoGraphic className="w-full h-full text-foreground" />
           </div>
           <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
-          <div className="relative z-10 container px-4 md:px-6">
+          <div className="relative z-10 w-full flex flex-col items-center px-4 md:px-6">
             <h1 className="font-headline text-4xl font-bold tracking-tighter text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               Koło Naukowe{' '}
               <span className="text-primary tracking-widest">C1PH3R</span>
