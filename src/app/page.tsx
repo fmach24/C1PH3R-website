@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Mail, MapPin, Phone, Linkedin, Facebook } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import {
@@ -22,27 +21,17 @@ import { AghLogo } from '@/components/icons/agh-logo';
 const contactDetails = [
   {
     icon: Mail,
-    value: 'michalCippera@agh.edu.pl',
-    href: 'mailto:michalCippera@agh.edu.pl',
-  },
-  {
-    icon: Phone,
-    value: '+48 123 456 789',
-    href: 'tel:+48123456789',
+    value: 'cipher@agh.edu.pl',
+    href: 'mailto:cipher@agh.edu.pl'
   },
   {
     icon: MapPin,
     value: 'Wydział WiET, AGH, Kraków',
-    href: 'https://maps.app.goo.gl/sfudVf5QGfyj6PcN6',
+    href: 'https://maps.app.goo.gl/sfudVf5QGfyj6PcN6'
   },
 ];
 
 export default function Home() {
-  const projectImage = PlaceHolderImages.find((img) => img.id === 'project-1');
-  const teamImages = PlaceHolderImages.filter((img) =>
-    img.id.startsWith('member-')
-  );
-  
   const [logoScale, setLogoScale] = useState(0.5);
   
   useEffect(() => {
@@ -80,7 +69,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-3">
             <Link
-              href="#"
+              href="https://www.linkedin.com/company/cipher-agh/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center h-12 w-12 rounded-md bg-white border-2 border-primary/20 shadow-md text-primary hover:bg-gray-100 transition-colors"
@@ -89,7 +78,7 @@ export default function Home() {
               <Linkedin className="h-7 w-7" strokeWidth={1.5} />
             </Link>
             <Link
-              href="#"
+              href="https://www.facebook.com/KNCipherAGH"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center h-12 w-12 rounded-md bg-white border-2 border-primary/20 shadow-md text-primary hover:bg-gray-100 transition-colors"
@@ -142,7 +131,7 @@ export default function Home() {
         </section>
 
         <section id="o-nas" className="py-16 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6 max-w-6xl">
             <Card className="border-2 border-primary/20 bg-card shadow-xl">
               <CardHeader className="items-center text-center">
                 <CardTitle className="font-headline text-3xl md:text-4xl">
@@ -171,7 +160,7 @@ export default function Home() {
           id="projekty"
           className="py-16 md:py-24 lg:py-32 bg-secondary/50"
         >
-          <div className="container mx-auto px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Nasze Projekty
@@ -183,17 +172,14 @@ export default function Home() {
             <div className="mt-12">
               <Card className="overflow-hidden shadow-lg">
                 <div className="grid md:grid-cols-2 items-start">
-                  {projectImage && (
-                    <div className="relative h-64 md:h-full">
-                      <Image
-                        src={projectImage.imageUrl}
-                        alt={projectImage.description}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={projectImage.imageHint}
-                      />
-                    </div>
-                  )}
+                  <div className="relative h-64 md:h-full">
+                    <Image
+                      src="/image.png"
+                      alt="Analiza bezpieczeństwa sieci IoT"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="p-6 md:p-8">
                     <CardHeader>
                       <CardTitle className="font-headline text-2xl">
@@ -222,54 +208,37 @@ export default function Home() {
         </section>
 
         <section id="zespol" className="py-16 md:py-24 lg:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Nasz Zespół i Opiekun
-              </h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Poznaj ludzi tworzących Koło Naukowe Cipher i naszego opiekuna
-                naukowego.
-              </p>
-            </div>
-            <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4 items-start">
-              {teamImages.map((member) => (
-                <div
-                  key={member.id}
-                  className="flex flex-col items-center text-center group"
-                >
-                  <div className="relative h-32 w-32">
-                    <Image
-                      src={member.imageUrl}
-                      alt={member.description}
-                      width={128}
-                      height={128}
-                      className="rounded-full object-cover border-2 border-border group-hover:border-primary transition-colors"
-                      data-ai-hint={member.imageHint}
-                    />
-                  </div>
-                  <h4 className="mt-4 font-semibold">
-                    {member.description.split(',')[0]}
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    {member.description.split(',')[1]}
+          <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+            <Card className="border-2 border-primary/20 bg-card shadow-xl">
+              <CardHeader className="items-center text-center">
+                <CardTitle className="font-headline text-3xl md:text-4xl">
+                  Nasz Zespół
+                </CardTitle>
+                <CardDescription className="max-w-3xl text-base md:text-lg">
+                  Poznaj ludzi tworzących Koło Naukowe Cipher i naszego opiekuna
+                  naukowego.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6 text-center text-muted-foreground">
+                <div className="text-center text-muted-foreground">
+                  <p className="text-lg">
+                    Informacje o członkach zespołu wkrótce.
                   </p>
                 </div>
-              ))}
-            </div>
-            <div className="mt-16 text-center">
-              <h3 className="font-headline text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
-                Opiekun Koła
-              </h3>
-              <p className="mt-4 text-xl font-semibold text-primary">
-                dr hab. inż. Marcin Niemiec, prof. AGH
-              </p>
-              <p className="mt-2 max-w-2xl mx-auto text-muted-foreground">
-                Adiunkt w Katedrze Telekomunikacji na Wydziale EAIiIB AGH,
-                odpowiedzialny za rozwój naukowy i wsparcie merytoryczne naszego
-                koła.
-              </p>
-            </div>
+                <div className="mt-16 text-center">
+                  <h3 className="font-headline text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl text-foreground">
+                    Opiekun Koła
+                  </h3>
+                  <p className="mt-4 text-xl font-semibold text-primary">
+                    dr hab. inż. Marcin Niemiec, prof. AGH
+                  </p>
+                  <p className="mt-2 max-w-2xl mx-auto text-muted-foreground">
+                    Odpowiedzialny za rozwój naukowy i wsparcie merytoryczne naszego
+                    koła.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
@@ -284,13 +253,14 @@ export default function Home() {
               </p>
             </div>
             <div className="mt-12 max-w-lg mx-auto">
-              <Card>
+              <Card className="shadow-lg">
                 <CardContent className="p-6">
                   <ul className="space-y-4">
                     {contactDetails.map((detail) => (
                       <li key={detail.value} className="flex items-center gap-4">
                         <detail.icon className="h-6 w-6 text-primary" />
                         <Link
+                          rel="noopener noreferrer"
                           href={detail.href}
                           className="text-lg text-muted-foreground hover:text-foreground"
                         >
@@ -314,23 +284,23 @@ export default function Home() {
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="flex items-center gap-3 cursor-pointer bg-transparent border-none p-0"
               >
-                <div className="bg-white rounded-full p-2 shadow-md">
-                  <LogoGraphic className="h-12 w-12 text-primary" />
-                </div>
+                <LogoGraphic className="h-12 w-12" />
                 <span className="font-headline text-2xl font-bold">C1PH3R</span>
               </button>
               <p className="text-sm text-muted-foreground">
-                Koło Naukowe Cyberbezpieczeństwa
+                Koło Naukowe C1PH3R
                 <br />
                 Akademia Górniczo-Hutnicza w Krakowie
+                <br />
+                Wydział Informatyki, Elektroniki i Telekomunikacji
               </p>
             </div>
 
             <div className="flex justify-center items-center gap-8">
-              <Link href="https://www.agh.edu.pl/" target="_blank">
+              <Link href="https://www.agh.edu.pl/" target="_blank" rel="noopener noreferrer">
                 <AghLogo width={96} height={96} className="h-24 w-auto object-contain" />
               </Link>
-              <Link href="https://www.iet.agh.edu.pl/" target="_blank">
+              <Link href="https://www.iet.agh.edu.pl/" target="_blank" rel="noopener noreferrer">
                 <WietLogo className="h-24 w-auto" />
               </Link>
             </div>
@@ -345,7 +315,7 @@ export default function Home() {
                   className="text-muted-foreground hover:text-primary hover:bg-accent"
                 >
                   <Link
-                    href="#"
+                    href="https://www.linkedin.com/company/cipher-agh/posts/?feedView=all"
                     aria-label="LinkedIn Profile"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -360,7 +330,7 @@ export default function Home() {
                   className="text-muted-foreground hover:text-primary hover:bg-accent"
                 >
                   <Link
-                    href="#"
+                    href="https://www.facebook.com/KNCipherAGH"
                     aria-label="Facebook Profile"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -370,12 +340,6 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-          </div>
-          <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-            <p>
-              &copy; {new Date().getFullYear()} Koło Naukowe Cipher AGH. Wszelkie
-              prawa zastrzeżone.
-            </p>
           </div>
         </div>
       </footer>
