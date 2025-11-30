@@ -185,7 +185,7 @@ export default function Home() {
                       <CardTitle className="font-headline text-2xl">
                         KN C1PH3R at MILCOM 2025!
                       </CardTitle>
-                      <CardDescription>6-10 november 2025</CardDescription>
+                      <CardDescription>6-10 october 2025</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">
