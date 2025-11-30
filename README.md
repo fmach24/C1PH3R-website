@@ -18,25 +18,13 @@ npm install
 
 # Uruchomienie w trybie deweloperskim
 npm run dev
-
-# Build produkcyjny
-npm run build
-
-# Start serwera produkcyjnego
-npm start
-
-# Sprawdzanie typów TypeScript
-npm run typecheck
-
-# Linting
-npm run lint
 ```
 
 ## 🏗️ Struktura projektu
 
 ```
 C1PH3R-website/
-├── public/              # Pliki statyczne (obrazy, fonty, favicon)
+├── public/              # Pliki statyczne (obrazy, favicon)
 ├── src/
 │   ├── app/            # Next.js App Router
 │   │   ├── layout.tsx  # Layout główny
@@ -51,7 +39,7 @@ C1PH3R-website/
 └── docs/               # Dokumentacja projektu
 ```
 
-## 🎨 Konfiguracja
+## Konfiguracja
 
 Projekt używa:
 - **Static Export** - generowanie statycznych plików HTML
@@ -61,8 +49,6 @@ Projekt używa:
 
 ## 🌐 Deployment
 
-Projekt jest skonfigurowany jako statyczny export (`output: 'export'`), więc może być hostowany na dowolnym serwerze statycznym:
-
 1. Zbuduj projekt:
 ```bash
 npm run build
@@ -70,22 +56,11 @@ npm run build
 
 2. Folder `out/` zawiera gotowe pliki do wdrożenia
 
-3. Skopiuj zawartość folderu `out/` na serwer
+3. Skopiuj zawartość folderu `out/` na serwer AGH do folderu public_html
 
-### Deployment na AGH
-```bash
-# Przykład kopiowania na serwer AGH
-scp -r out/* user@cipher.agh.edu.pl:/var/www/html/
-```
+### Deployment na AGH przez Windows
 
-## 📝 SEO
-
-Projekt zawiera:
-- ✅ Metadata w `layout.tsx`
-- ✅ Open Graph tags
-- ✅ `robots.txt`
-- ✅ `sitemap.xml`
-- ✅ Favicon i ikony
+Najlepiej przez WinSCP połączyć się przez sftp
 
 ## 🔧 Development
 
@@ -101,10 +76,6 @@ Projekt używa **shadcn/ui**. Aby dodać nowy komponent:
 ```bash
 npx shadcn@latest add [nazwa-komponentu]
 ```
-
-## 📄 Licencja
-
-Projekt Koła Naukowego C1PH3R AGH
 
 ## 👥 Kontakt
 
